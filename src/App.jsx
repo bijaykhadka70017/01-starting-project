@@ -1,16 +1,6 @@
-import reactImg from './assets/react-core-concepts.png';
-import componentsImg from './assets/components.png';
 import { CORE_CONCEPTS } from './data.js';
-
-function CoreConcept(props) {
-  return (
-    <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
+import Header from './components/Header.jsx';
+import CoreConcept from './components/CoreConcept.jsx';
 
 function App() {
   return (
