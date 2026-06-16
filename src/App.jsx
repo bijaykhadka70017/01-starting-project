@@ -1,12 +1,18 @@
+import { useState } from 'react';
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+  // Register the state with an initial value
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
   function handleClick(selectedButton) {
-    // selectedButton => Components, JSX, Props, State
-    console.log('Selected button', selectedButton);
+    //Use the updater function to change the data and schedule a re-render
+    setSelectedTopic(selectedButton);
+
+    // ⚠️ WARNING: Logging here will show the OLD value
+    console.log(selectedTopic);
   }
 
   return (
@@ -43,6 +49,7 @@ function App() {
             <TabButton onSelect={() => handleClick('props')}>Props</TabButton>
             <TabButton onSelect={() => handleClick('state')}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>
