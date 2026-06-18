@@ -1,9 +1,11 @@
-export default function Tabs({ children, buttons }) {
+export default function Tabs({ children, buttons, buttonsContainer = 'menu' }) {
+    // Remap to an uppercase identifier so React treats it as a component
+    const ButtonsContainer = buttonsContainer;
     return (
         <>
-            <menu>
+            <ButtonsContainer>
                 {buttons}
-            </menu>
+            </ButtonsContainer>
             {children}
         </>
     )
